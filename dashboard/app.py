@@ -97,7 +97,7 @@ with tab1:
 
     if st.button("Predict Churn"):
 
-        response = requests.post("http://127.0.0.1:8000/predict", json=user_data)
+        response = requests.post("https://churn-api-5fcs.onrender.com/predict", json=user_data)
 
         if response.status_code == 200:
             result = response.json()
@@ -307,11 +307,11 @@ with tab3:
 
     prob = st.session_state.get("prob", None)
 
-    # 🚫 If prediction not done
+    # If prediction not done
     if prob is None:
         st.warning("⚠️ Please run prediction first to view insights")
     
-    # ✅ Only show insights AFTER prediction
+    # Only show insights AFTER prediction
     else:
         st.subheader("📊 Key Drivers for This Customer")
 

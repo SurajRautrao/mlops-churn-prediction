@@ -13,11 +13,11 @@ default_args = {
 
 # ------------------ Task Functions ------------------
 def load_data():
-    logging.info("📥 Loading and cleaning data...")
+    logging.info("Loading and cleaning data...")
     subprocess.run(["python", "src/data.py"], check=True)
 
 def train_model():
-    logging.info("🤖 Training model...")
+    logging.info("Training model...")
     subprocess.run(["python", "src/train.py"], check=True)
 
 # ------------------ DAG ------------------
