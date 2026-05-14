@@ -175,20 +175,4 @@ This solution enables companies to:
 
 ---
 
-## Author
 
-**Suraj Balaji Rautrao**
-
-* LinkedIn: www.linkedin.com/in/suraj-rautrao-70a089b8
-* GitHub: https://github.com/SurajRautrao
-
----
-
-## License
-
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-
-You are free to view and use this code for learning and research purposes only. 
-Commercial use, redistribution, or reuse without permission is not allowed.
-
-© 2026 [Suraj Balaji Rautrao]
