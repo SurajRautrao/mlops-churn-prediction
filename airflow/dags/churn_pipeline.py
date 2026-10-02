@@ -3,6 +3,11 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import subprocess
 import logging
+import sys
+from pathlib import Path
+
+# Repo root (airflow/dags/ -> project root); scripts use paths relative to it
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # ------------------ Default Args ------------------
 default_args = {
@@ -14,11 +19,11 @@ default_args = {
 # ------------------ Task Functions ------------------
 def load_data():
     logging.info("Loading and cleaning data...")
-    subprocess.run(["python", "src/data.py"], check=True)
+    subprocess.run([sys.executable, "-m", "src.data"], cwd=PROJECT_ROOT, check=True)
 
 def train_model():
     logging.info("Training model...")
-    subprocess.run(["python", "src/train.py"], check=True)
+    subprocess.run([sys.executable, "-m", "src.train"], cwd=PROJECT_ROOT, check=True)
 
 # ------------------ DAG ------------------
 with DAG(
